@@ -139,14 +139,13 @@ main {
     color: rgba(255, 31, 32, 255);
 }
 
-
 .bottom-middle-navbar ul li a {
     font-weight: 500;
     color: #000000;
 }
 .bottom-middle-navbar ul li {
     margin-top: 2.3em;
-    padding-left: 60px;
+    padding-left: 40px;
     list-style: none;
 }
 
@@ -214,7 +213,7 @@ main {
 
 .showcase img {
     width: 100%;
-    height: 800px;
+    height: 1000px;
 }
 /* Showcase Buttons*/
 .showcaseBtn #btn-backward button {
@@ -241,7 +240,6 @@ main {
     padding: 10px 20px;
 }
 
-
 .showcaseBtn:hover {
     background-color: rgba(0, 0, 0, 0.8);
 }
@@ -254,44 +252,19 @@ main {
 }
 
 .showcase-text #showcase-sale span {
-    margin-left: -20        67px;
+    margin-left: -20 67px;
     font-family: "Clicker Script", cursive;
     font-size: 3em;
 }
 
-.showcase-text #showcase-h1 h1{
+.showcase-text #showcase-h1 h1 {
     font-size: 2em;
     font: bolder;
 }
 
-.showcase-text #showcase-p p{
+.showcase-text #showcase-p p {
     margin-left: 25px;
     width: 300px;
     height: 100px;
     text-align: center;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -8,7 +8,7 @@
             @import url("https://fonts.googleapis.com/css2?family=Clicker+Script&family=Jost:ital,wght@0,100..900;1,100..900&display=swap");
             @import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap");
         </style>
-        <title>Victoria's Secret</title>
+        <title>Glamour Fashion</title>
     </head>
     <body>
         <div class="main">
@@ -105,51 +105,19 @@
                     </div>
                 </div>
             </header>
-
-            <div class="promo">
-                <p>
-                    Sale Up To 50% Biggest Discounts. Hurry! Limited Period
-                    Offer. <a href="#">Shop Now</a>
-                </p>
-            </div>
-            <div class="showcase">
-                <div class="showcaseBtn">
-                    <div id="btn-backward">
-                        <button>
-                            <i class="fa-solid fa-arrow-left"></i>
-                        </button>
-                    </div>
-                    <div id="btn-forward">
-                        <button><i class="fa-solid fa-arrow-right"></i></button>
-                    </div>
+            <section class="content">
+                <div class="promo">
+                    <p>
+                        Sale Up To 90% Biggest Discounts. Hurry! Limited Period
+                        Offer. <a href="#">Shop Now</a>
+                    </p>
                 </div>
-                <div class="showcase-image">
-                    <img
-                        id="image"
-                        src="image/showcase-image-1.png"
-                        alt="showcase-images"
-                    />
+                <div class="showcase">
+                    
                 </div>
-                <div class="showcase-text">
-                    <div id="showcase-sale">
-                        <p><span>Fashion Sale</span></p>
-                    </div>
-                    <div id="showcase-h1">
-                        <h1>Women's Fashion Style</h1>
-                    </div>
-                    <div id="showcase-p">
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur, adipisicing
-                            elit. Aut eum dolor sunt magni, fuga quod ducimus
-                            voluptates tenetur sint ad sed, culpa ipsum, minima
-                            impedit inventore incidunt asperiores totam
-                            suscipit!
-                        </p>
-                    </div>
-                </div>
-            </div>
+            </section>
         </div>
-        <script src="jav/ascript/main.js"></script>
+        <script src="Glamour Fashion Website/javascript/main.js"></script>
         <script
             src="https://kit.fontawesome.com/893520b916.js"
             crossorigin="anonymous"
