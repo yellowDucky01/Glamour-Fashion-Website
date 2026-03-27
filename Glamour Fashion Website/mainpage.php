@@ -113,14 +113,16 @@
                     </p>
                 </div>
                 <div class="showcase">
-                    <img  id="showcase-image" src="" alt="Showcase image">
-
-                    <button onclick="femaleBtn()">Female</button>
-                    <button onclick="maleBtn()">male</button>
+                    <img id="showcase-image" src="image/showcase-image-1.png" alt="">
+                    
+                    <div class="showcase-btn">
+                        <button id="btn-female" onclick="femaleBtn()">Female</button>
+                    <button id="btn-male" onclick="maleBtn()">male</button>
+                    </div>
                 </div>
             </section>
         </div>
-        <script src="Glamour Fashion Website/javascript/main.js"></script>
+        <script src="javascript/main.js"></script>
         <script
             src="https://kit.fontawesome.com/893520b916.js"
             crossorigin="anonymous"
