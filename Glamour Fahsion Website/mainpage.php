@@ -18,7 +18,7 @@
                         <div class="top-left-navbar-list">
                             <ul>
                                 <li><a href="#">About </a></li>
-                                <li><a href="#">Privacy </a></li>
+                                <li><a href="#">Privacy </a></li>   
                                 <li><a href="#">FAQ</a></li>
                                 <li><a href="#">Careers</a></li>
                             </ul>
@@ -113,7 +113,10 @@
                     </p>
                 </div>
                 <div class="showcase">
-                    
+                    <img  id="showcase-image" src="" alt="Showcase image">
+
+                    <button onclick="femaleBtn()">Female</button>
+                    <button onclick="maleBtn()">male</button>
                 </div>
             </section>
         </div>
