@@ -212,6 +212,12 @@ header {
     display: inline-block;
 }
 
+/* Content */
+.content {
+    min-height: 500vh;
+}
+
+
 /* Showcase*/
 .showcase {
     position: relative;
@@ -237,12 +243,13 @@ header {
 }
 
 .showcase-header h1, h2 {
-    letter-spacing: 16px;
+    letter-spacing: 10px;
     color: white;
     font-weight: 400;
 }
 
 .showcase-header h2 {
+    font-size: 1em;
     letter-spacing: 5px;
 }
 
@@ -293,12 +300,14 @@ header {
     font-size: 28px;
 }
 
-/* Featured Collection*/
+/* Showcase Men */
 
-.featured-collection {
-    min-height: 200vh;
+.showcase-men {
+    min-height: 120vh;
+    background: #241D19;
+    margin-top: 0;
+    padding-top: 0;
 }
-
 
 
 
