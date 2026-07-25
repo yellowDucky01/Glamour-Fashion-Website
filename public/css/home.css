@@ -1,3 +1,7 @@
+:root {
+    --brand-red: rgba(255, 31, 32, 255);
+}
+
 /* Font style */
 .jost-unique {
     font-family: "Jost", sans-serif;
@@ -58,6 +62,7 @@ header {
 }
 /* Left Navbar */
 .top-left-navbar-list ul {
+    padding: 1px;
     display: flex;
     float: left;
     justify-items: center;
@@ -145,12 +150,12 @@ header {
 }
 
 .bottom-middle-navbar ul li a {
-    font-size: 1.3em;
+    font-size: 1.5em;
     font-weight: 500;
     color: #000000;
 }
 .bottom-middle-navbar ul li {
-    margin-top: 2.3em;
+    margin-top: 2.2em;
     padding-left: 40px;
     list-style: none;
 }
@@ -304,9 +309,8 @@ header {
     display: flex;
     justify-content: center;
     gap: 7%;
-    font: white;
     min-height: 30vh;
-    background: #f9f1e6;
+    background: #1C1C1C;
 }
 
 .card {
@@ -317,9 +321,13 @@ header {
 }
 
 .card h2 {
-    color: #ff1f21;
+    letter-spacing: 0px;
+    color: #E6C5B8;
     font-weight: 500;
-    space-between: 1px;
+}
+
+.card p {
+    color: #EAE6E1;
 }
 
 .card img {
@@ -334,7 +342,16 @@ header {
     max-width: 200px;
 }
 
-.carddcontent button {
+.card-content button {
+    color: white;
     border: none;
+    border-bottom: solid white 1px;
     background: none;
+    max-width: 70%;
+    font-size: 1em;
+    transition: all .3s ease;
+}
+.card-content button:hover {
+    cursor: pointer;
+    background: rgba(255,255,255,.15);
 }
