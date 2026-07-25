@@ -13,7 +13,6 @@
 
 /* Main Section Styling */
 main {
-    overflow-y: auto;
     width: 70%;
     margin: auto;
 }
@@ -299,7 +298,7 @@ header {
     font-size: 28px;
 }
 
-/* Showcase Men */
+/* Showcase cards */
 
 .showcase-cards {
     display: flex;
@@ -307,13 +306,20 @@ header {
     gap: 7%;
     font: white;
     min-height: 30vh;
-    background: #4D4847;
+    background: #f9f1e6;
 }
 
 .card {
     display: flex;
     align-items: center;
     gap: 30px;
+    padding-right: 0;
+}
+
+.card h2 {
+    color: #ff1f21;
+    font-weight: 500;
+    space-between: 1px;
 }
 
 .card img {
@@ -325,5 +331,10 @@ header {
     display: flex;
     flex-direction: column;
     gap: 15px;
+    max-width: 200px;
 }
 
+.carddcontent button {
+    border: none;
+    background: none;
+}
