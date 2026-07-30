@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glamour Fashion — Haute Couture & Luxury Store</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- TOP ANNOUNCEMENT BAR -->
+    <div class="top-announcement">
+        <span>✨ Exclusive Season Sale — Enjoy 50% Off With Code <strong style="color:var(--gold);">GLAMOUR50</strong></span>
+        <a href="#store" onclick="filterCategory('all')">Shop Now</a>
+    </div>
+
+    <!-- HEADER & NAVBAR -->
+    <header>
+        <div class="navbar-container">
+            <!-- Top Nav -->
+            <div class="top-nav">
+                <ul class="top-nav-links">
+                    <li><a href="#store">About Us</a></li>
+                    <li><a href="#" onclick="openModal('trackingModal')">Track Order</a></li>
+                    <li><a href="#store">FAQ & Careers</a></li>
+                </ul>
+                <ul class="social-links">
+                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                </ul>
+                <div class="account-links" id="accountNav">
+                    <a href="#" onclick="openModal('authModal')"><i class="fa-regular fa-user"></i> Sign In / Register</a>
+                </div>
+            </div>
+
+            <!-- Main Nav -->
+            <div class="main-nav">
+                <div class="brand-logo">
+                    <a href="#">
+                        <span class="bold">Glamour</span>
+                        <span class="light">Fashion</span>
+                    </a>
+                </div>
+
+                <ul class="nav-menu">
+                    <li><a href="#" class="active" onclick="switchView('storeView')">Home</a></li>
+                    <li><a href="#store" onclick="switchView('storeView'); filterCategory('all')">Store</a></li>
+                    <li><a href="#store" onclick="switchView('storeView'); filterCategory('men')">Men</a></li>
+                    <li><a href="#store" onclick="switchView('storeView'); filterCategory('women')">Women</a></li>
+                    <li><a href="#store" onclick="switchView('storeView'); filterCategory('kids')">Kids</a></li>
+                    <li><a href="#" onclick="openModal('trackingModal')">Order Status</a></li>
+                    <li id="adminNavTab" style="display:none;"><a href="#" onclick="switchView('adminView')">Admin Portal</a></li>
+                </ul>
+
+                <div class="nav-actions">
+                    <button class="action-icon-btn" onclick="openModal('trackingModal')" title="Track Order">
+                        <i class="fa-solid fa-truck-fast"></i>
+                    </button>
+                    <button class="action-icon-btn" id="cartBtn" onclick="toggleCartDrawer()" title="Shopping Cart">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                        <span class="badge" id="cartBadge">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT VIEW -->
+    <main id="storeView">
+        <!-- HERO SHOWCASE SLIDER -->
+        <section class="hero-slider">
+            <div class="slide active">
+                <img src="image/showcase-image-1.jpg" alt="Exquisite Fashion Showcase 1">
+                <div class="slide-overlay">
+                    <h3>SPRING / SUMMER 2026</h3>
+                    <h1>EXQUISITE COLLECTIONS</h1>
+                    <a href="#store" class="hero-btn" onclick="filterCategory('all')">EXPLORE STORE <i class="fa-solid fa-arrow-down"></i></a>
+                </div>
+            </div>
+
+            <div class="slide">
+                <img src="image/showcase-image-2.png" alt="Exquisite Fashion Showcase 2">
+                <div class="slide-overlay">
+                    <h3>ITALIAN CRAFTSMANSHIP</h3>
+                    <h1>MONACO LUXURY SUITS</h1>
+                    <a href="#store" class="hero-btn" onclick="filterCategory('men')">SHOP MENSWEAR <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="slide">
+                <img src="image/showcase-image-3.png" alt="Exquisite Fashion Showcase 3">
+                <div class="slide-overlay">
+                    <h3>HAUTE COUTURE</h3>
+                    <h1>SILK EVENING GOWNS</h1>
+                    <a href="#store" class="hero-btn" onclick="filterCategory('women')">SHOP WOMENSWEAR <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="slide">
+                <img src="image/showcase-image-4.png" alt="Exquisite Fashion Showcase 4">
+                <div class="slide-overlay">
+                    <h3>SIGNATURE ACCESSORIES</h3>
+                    <h1>HANDCRAFTED LEATHER</h1>
+                    <a href="#store" class="hero-btn" onclick="filterCategory('accessories')">DISCOVER MORE <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="slider-controls" id="sliderDots">
+                <span class="dot active" onclick="setSlide(0)"></span>
+                <span class="dot" onclick="setSlide(1)"></span>
+                <span class="dot" onclick="setSlide(2)"></span>
+                <span class="dot" onclick="setSlide(3)"></span>
+            </div>
+        </section>
+
+        <!-- CATEGORIES SECTION -->
+        <section class="categories-section">
+            <div class="section-title">
+                <p>CURATED SELECTION</p>
+                <h2>EXPLORE CATEGORIES</h2>
+            </div>
+            <div class="category-cards-grid">
+                <div class="category-card">
+                    <img src="image/men.JPG" alt="Men's Collection">
+                    <div class="category-info">
+                        <h3>MEN</h3>
+                        <p>Tailored suits, wool coats, and fine cashmere.</p>
+                        <button class="category-btn" onclick="filterCategory('men')">SHOP MEN →</button>
+                    </div>
+                </div>
+
+                <div class="category-card">
+                    <img src="image/women.JPG" alt="Women's Collection">
+                    <div class="category-info">
+                        <h3>WOMEN</h3>
+                        <p>Elegantly crafted dresses, gowns, and trench coats.</p>
+                        <button class="category-btn" onclick="filterCategory('women')">SHOP WOMEN →</button>
+                    </div>
+                </div>
+
+                <div class="category-card">
+                    <img src="image/kids.JPG" alt="Kids Collection">
+                    <div class="category-info">
+                        <h3>KIDS</h3>
+                        <p>Charming velvet apparel and organic cotton outfits.</p>
+                        <button class="category-btn" onclick="filterCategory('kids')">SHOP KIDS →</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- STORE CATALOG & PRODUCTS SECTION -->
+        <section class="store-section" id="store">
+            <div class="section-title" style="margin-bottom: 25px;">
+                <p>AUTUMN / WINTER</p>
+                <h2 style="color:#111;">STORE CATALOG</h2>
+            </div>
+
+            <!-- Store Controls -->
+            <div class="store-controls">
+                <div class="filter-tabs">
+                    <button class="tab-btn active" data-cat="all" onclick="filterCategory('all')">All Products</button>
+                    <button class="tab-btn" data-cat="men" onclick="filterCategory('men')">Men</button>
+                    <button class="tab-btn" data-cat="women" onclick="filterCategory('women')">Women</button>
+                    <button class="tab-btn" data-cat="kids" onclick="filterCategory('kids')">Kids</button>
+                    <button class="tab-btn" data-cat="accessories" onclick="filterCategory('accessories')">Accessories</button>
+                </div>
+
+                <div class="search-sort-box">
+                    <input type="text" id="searchInput" class="search-input" placeholder="Search collection..." oninput="handleSearch()">
+                    <select id="sortSelect" class="sort-select" onchange="handleSort()">
+                        <option value="default">Sort by: Default</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="rating">Highest Rated</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Product Grid -->
+            <div class="product-grid" id="productGrid">
+                <!-- Dynamically loaded via JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <!-- ADMIN PANEL VIEW -->
+    <section id="adminView" class="admin-section">
+        <div class="section-title" style="margin-bottom: 30px; text-align:left;">
+            <p>ADMINISTRATOR DASHBOARD</p>
+            <h2 style="color:#111;">System Statistics & Orders</h2>
+        </div>
+
+        <div class="admin-grid">
+            <div class="stat-card">
+                <h4>Total Revenue</h4>
+                <div class="number" id="statRevenue">$0.00</div>
+            </div>
+            <div class="stat-card">
+                <h4>Total Orders</h4>
+                <div class="number" id="statOrders">0</div>
+            </div>
+            <div class="stat-card">
+                <h4>Active Catalog Items</h4>
+                <div class="number" id="statProducts">0</div>
+            </div>
+        </div>
+
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; margin-bottom:15px;">
+            <h3>Recent Orders</h3>
+            <button class="submit-btn" style="width:auto; padding:10px 20px;" onclick="openModal('addProductModal')">+ Add New Product</button>
+        </div>
+
+        <table class="admin-table">
+            <thead>
+                <tr>
+                    <th>Order #</th>
+                    <th>Tracking Code</th>
+                    <th>Customer Name</th>
+                    <th>Date</th>
+                    <th>Total Amount</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="adminOrdersTable">
+                <!-- Dynamically populated -->
+            </tbody>
+        </table>
+    </section>
+
+    <!-- CART DRAWER & OVERLAY -->
+    <div class="cart-overlay" id="cartOverlay" onclick="toggleCartDrawer()"></div>
+    <div class="cart-drawer" id="cartDrawer">
+        <div class="cart-header">
+            <h2>YOUR SHOPPING CART</h2>
+            <button class="close-btn" onclick="toggleCartDrawer()">&times;</button>
+        </div>
+
+        <div class="cart-items-body" id="cartItemsContainer">
+            <!-- Dynamically populated -->
+        </div>
+
+        <div class="cart-footer">
+            <div class="promo-input-group">
+                <input type="text" id="promoCodeInput" placeholder="Promo code (e.g. GLAMOUR50)">
+                <button onclick="applyPromoCode()">Apply</button>
+            </div>
+            <div class="summary-line">
+                <span>Subtotal:</span>
+                <span id="cartSubtotal">$0.00</span>
+            </div>
+            <div class="summary-line" id="discountRow" style="display:none; color:var(--accent-red);">
+                <span>Discount:</span>
+                <span id="cartDiscount">-$0.00</span>
+            </div>
+            <div class="summary-line total">
+                <span>Total:</span>
+                <span id="cartTotal">$0.00</span>
+            </div>
+            <button class="checkout-btn" onclick="openCheckoutModal()">PROCEED TO CHECKOUT →</button>
+        </div>
+    </div>
+
+    <!-- AUTHENTICATION MODAL -->
+    <div class="modal-overlay" id="authModal">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h3 id="authModalTitle">Sign In</h3>
+                <button class="close-btn" onclick="closeModal('authModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div style="display:flex; gap:10px; margin-bottom:20px;">
+                    <button id="loginTabBtn" class="tab-btn active" style="flex:1" onclick="switchAuthTab('login')">Sign In</button>
+                    <button id="registerTabBtn" class="tab-btn" style="flex:1" onclick="switchAuthTab('register')">Register</button>
+                </div>
+
+                <form id="authForm" onsubmit="handleAuthSubmit(event)">
+                    <div class="form-group" id="nameGroup" style="display:none;">
+                        <label>Full Name</label>
+                        <input type="text" id="authName" placeholder="Elena Vance">
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" id="authEmail" required placeholder="name@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" id="authPassword" required placeholder="••••••••">
+                    </div>
+                    <button type="submit" class="submit-btn" id="authSubmitBtn">Sign In</button>
+                </form>
+
+                <div style="margin-top:20px; text-align:center; padding-top:15px; border-top:1px solid #eee;">
+                    <p style="font-size:0.85rem; color:#666; margin-bottom:10px;">Quick Demo Access:</p>
+                    <div style="display:flex; gap:10px;">
+                        <button type="button" class="tab-btn" style="flex:1; font-size:0.8rem;" onclick="quickLogin('admin@glamour.com', 'admin123')">Demo Admin</button>
+                        <button type="button" class="tab-btn" style="flex:1; font-size:0.8rem;" onclick="quickLogin('elena@example.com', 'user123')">Demo Customer</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TRACK ORDER MODAL -->
+    <div class="modal-overlay" id="trackingModal">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h3>Track Your Package</h3>
+                <button class="close-btn" onclick="closeModal('trackingModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form onsubmit="handleTrackingSearch(event)">
+                    <div class="form-group">
+                        <label>Order ID or Tracking Number</label>
+                        <input type="text" id="trackingInput" required placeholder="e.g. GF-884920">
+                    </div>
+                    <button type="submit" class="submit-btn">Search Order Status</button>
+                </form>
+
+                <div id="trackingResult" style="margin-top:25px; display:none;">
+                    <!-- Dynamically populated -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CHECKOUT MODAL -->
+    <div class="modal-overlay" id="checkoutModal">
+        <div class="modal-box" style="width:550px;">
+            <div class="modal-header">
+                <h3>Complete Order</h3>
+                <button class="close-btn" onclick="closeModal('checkoutModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form onsubmit="handleCheckoutSubmit(event)">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" id="checkoutName" required placeholder="Elena Vance">
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" id="checkoutEmail" required placeholder="elena@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label>Shipping Address</label>
+                        <input type="text" id="checkoutAddress" required placeholder="742 Evergreen Terrace">
+                    </div>
+                    <div style="display:flex; gap:15px;">
+                        <div class="form-group" style="flex:2;">
+                            <label>City</label>
+                            <input type="text" id="checkoutCity" required placeholder="Springfield">
+                        </div>
+                        <div class="form-group" style="flex:1;">
+                            <label>ZIP Code</label>
+                            <input type="text" id="checkoutZip" required placeholder="97477">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Payment Method (Simulated)</label>
+                        <input type="text" value="•••• •••• •••• 4242 (Visa Credit Card)" disabled>
+                    </div>
+                    <button type="submit" class="submit-btn">Place Order ($<span id="checkoutTotalBtn">0.00</span>)</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- ADD PRODUCT MODAL (ADMIN) -->
+    <div class="modal-overlay" id="addProductModal">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h3>Add New Product</h3>
+                <button class="close-btn" onclick="closeModal('addProductModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form onsubmit="handleAddProductSubmit(event)">
+                    <div class="form-group">
+                        <label>Product Name</label>
+                        <input type="text" id="newProdName" required placeholder="Silk Summer Scarf">
+                    </div>
+                    <div class="form-group">
+                        <label>Category</label>
+                        <select id="newProdCategory" required>
+                            <option value="1">Men Collection</option>
+                            <option value="2">Women Collection</option>
+                            <option value="3">Kids Collection</option>
+                            <option value="4">Accessories</option>
+                        </select>
+                    </div>
+                    <div style="display:flex; gap:15px;">
+                        <div class="form-group" style="flex:1;">
+                            <label>Price ($)</label>
+                            <input type="number" step="0.01" id="newProdPrice" required placeholder="250.00">
+                        </div>
+                        <div class="form-group" style="flex:1;">
+                            <label>Original Price ($)</label>
+                            <input type="number" step="0.01" id="newProdOrigPrice" placeholder="320.00">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Description</label>
+                        <textarea id="newProdDesc" rows="3" placeholder="Description of the item..."></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Create Product</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>Glamour Fashion</h4>
+                <p style="font-size:0.9rem; line-height:1.6;">Haute couture and luxury fashion brand committed to timeless craftsmanship and sustainable elegance.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Customer Care</h4>
+                <ul>
+                    <li><a href="#" onclick="openModal('trackingModal')">Order Tracking</a></li>
+                    <li><a href="#">Shipping & Returns</a></li>
+                    <li><a href="#">Size Guide</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Collections</h4>
+                <ul>
+                    <li><a href="#store" onclick="filterCategory('men')">Men's Luxury</a></li>
+                    <li><a href="#store" onclick="filterCategory('women')">Women's Couture</a></li>
+                    <li><a href="#store" onclick="filterCategory('kids')">Kids Apparel</a></li>
+                    <li><a href="#store" onclick="filterCategory('accessories')">Signature Leather</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Glamour Fashion System. Full Stack Basis System with SQLite Backend.</p>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
